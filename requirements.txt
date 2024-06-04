@@ -1,0 +1,425 @@
+Flask
+Jinja2
+plotly
+
+your_project/
+├── app.py
+├── templates/
+│   ├── base.html (optional)
+│   ├── index.html
+│   └── features.html
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── fonts/ (optional)
+│   │   └── your_font.ttf
+│   └── images/
+│       ├── logo.png
+│       └── other_images.png (and others)
+└── requirements.txt
+
+index.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Data Analytics Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Your Company Logo" class="logo">
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/features">Features</a>
+
+            <a href="/pricing">Pricing</a>
+
+            <a href="/contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h2>Empower Your Decisions with Data</h2>
+
+                <p>
+
+                    Gain a clear view of your key metrics, identify trends and patterns, and unlock actionable insights to optimize your operations with our comprehensive data analytics dashboard.
+
+                </p>
+
+                <a href="/features" class="btn btn-primary">Learn More About the Features</a>
+
+            </div>
+
+            <img src="{{ url_for('static', filename='images/dashpic.jpg') }}" alt="Data Analytics Dashboard Graphic" class="hero-img">
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2024 Your Company Name</p>
+
+    </footer>
+
+</body>
+
+</html>
+
+
+
+features.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Data Analytics Dashboard Features</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Your Company Logo" class="logo">
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/features">Features</a>
+
+            <a href="/pricing">Pricing</a>
+
+            <a href="/contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h2>Data Analytics Dashboard Features</h2>
+
+        <ul class="features-list">
+
+            {% for feature in features %}
+
+            <li>
+
+                <h3>{{ feature.title }}</h3>
+
+                <p>{{ feature.description }}</p>
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        <p>
+
+            Ready to experience the power of data-driven insights? Contact us today to learn more about our data analytics dashboard!
+
+        </p>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2024 Your Company Name</p>
+
+    </footer>
+
+</body>
+
+</html>
+
+
+
+base.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Data Analytics Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Your Company Logo" class="logo">
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/features">Features</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        </main>
+
+    <footer>
+
+        <p>&copy; 2024 Your Company Name</p>
+
+    </footer>
+
+</body>
+
+</html>
+
+
+
+app.py
+
+from flask import Flask, render_template
+
+
+
+app = Flask(__name__)
+
+
+
+@app.route('/')
+
+def index():
+
+    return render_template('index.html')
+
+
+
+@app.route('/features')
+
+def features():
+
+    # Define features and descriptions here
+
+    features = [
+
+        {'title': 'Real-time Data Visualization', 'description': 'See trends and insights unfold as your data updates.'},
+
+        {'title': 'Customizable Dashboards', 'description': 'Tailor the dashboard to your specific needs and focus areas.'},
+
+        {'title': 'Actionable Insights', 'description': 'Get clear and actionable recommendations based on your data.'},
+
+        # Add more features and descriptions as needed
+
+    ]
+
+    return render_template('features.html', features=features)
+
+
+
+if __name__ == '__main__':
+
+    app.run(debug=True)
+
+
+
+and style.css
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;  /* Remove default margin */
+
+    padding: 0;  /* Remove default padding */
+
+}
+
+
+
+header {
+
+    background-color: #ffffff;  /* Light background for header */
+
+    padding: 20px;
+
+    display: flex;  /* Align logo and navigation horizontally */
+
+    align-items: center;  /* Align items vertically in header */
+
+}
+
+
+
+.logo {
+
+    width: 300px;
+
+    height: 100px;
+
+}
+
+
+
+header img {
+
+    width: 100px;  /* Adjust logo size as needed */
+
+}
+
+
+
+header h1 {
+
+    margin-left: 10px; /* Adjust spacing between logo and title */
+
+}
+
+
+
+nav {
+
+    margin-left: auto; /* Position navigation to the right */
+
+}
+
+
+
+nav a {
+
+    padding: 10px 15px;
+
+    text-decoration: none;
+
+    color: #333;
+
+}
+
+
+
+nav a:hover {
+
+    background-color: #ddd;
+
+}
+
+
+
+main {
+
+    padding: 20px;
+
+}
+
+.hero-img {
+
+    width: 80%;  /* Adjust width as needed */
+
+    height: auto;  /* Maintain aspect ratio */
+
+}
+
+
+
+.hero {
+
+    text-align: center;
+
+}
+
+
+
+.hero p {
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    margin: 20px 0;
+
+}
+
+
+
+.features-list {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+
+
+.features-list li {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.features-list h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+/* Add more styles as needed (e.g., for buttons, charts) */
+
+
+
+add more js elements, pics, background colors, and other elements to beautify this website and make it look professional

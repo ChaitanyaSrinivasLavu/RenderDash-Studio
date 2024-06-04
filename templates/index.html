@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Data Analytics Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Your Company Logo" class="logo">
+      <nav class="nav-right flex">
+        <a href="/">Home</a>
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+        <a href="/team">Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="global-font">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Sales Predict Dashboard: Empower Your Business Decisions</h1>
+          <p>Leverage advanced analytics for accurate sales forecasting and data-driven inventory management.</p>
+        </div>
+        <div class="hero-image">
+          <img src="{{ url_for('static', filename='images/dashpic.png') }}" alt="Data Analytics Dashboard Image" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose">
+      <div class="container">
+        <h2>Why Choose the Sales Predict Dashboard?</h2>
+        <div class="card-deck">
+          <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Accurate Forecasting</h3>
+            <p>Gain insights into future sales trends and avoid stockouts or overstocking.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h3>Optimized Operations</h3>
+            <p>Make informed decisions for inventory levels, marketing campaigns, and resource allocation.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-piggy-bank"></i>
+            <h3>Cost Savings</h3>
+            <p>Reduce inventory carrying costs and increase profits with efficient inventory management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How Does the Sales Predict Dashboard Work?</h2>
+        <div class="step-container">
+          <div class="step">
+            <h3>1. Data Integration</h3>
+            <p>Connect your existing sales and inventory data to the platform effortlessly.</p>
+            <img src="{{ url_for('static', filename='images/5581843.png') }}" alt="Data Integration Icon" class="hero-img1">
+          </div>
+          <div class="step">
+            <h3>2. Advanced Analytics</h3>
+            <p>Our AI-powered algorithms analyze vast amounts of data to identify patterns and trends.</p>
+            <img src="{{ url_for('static', filename='images/aidash.png') }}" alt="AI Analysis Icon">
+          </div>
+          <div class="step">
+            <h3>3. Sales Forecasting</h3>
+            <p>Generate accurate forecasts and receive real-time insights to guide your business decisions.</p>
+            <img src="{{ url_for('static', filename='images/salepre.png') }}" alt="Sales Forecast Icon">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-stories">
+      <div class="container">
+        <h2>Our First Customer Success Story</h2>
+        <div class="testimonial">
+            <p>"Since implementing the Sales Predict Dashboard prototype, I am able to easily identify demand forecast of my sales, This helped my stock maintenace."</p>
+            <p>- Balaramyya, Sai Ram General stores</p>
+          </div>
+        </div>
+      </section>
+  
+      <section class="call-to-action">
+        <div class="container">
+          <h2>Ready to Take Control of Your Inventory?</h2>
+          <p>Empower your business with accurate sales forecasts and data-driven insights. Sign up for a free trial by contacting us!</p>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Your Company Name</p>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </footer>
+  
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+  </body>
+  </html>

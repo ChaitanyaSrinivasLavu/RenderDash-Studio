@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+}
+
+header {
+    background-color: #ffffff;  /* Light background for header */
+    padding: 20px;
+    display: flex;  /* Align logo and navigation horizontally */
+    align-items: center;  /* Align items vertically in header */
+}
+
+.flex {
+    display: flex;
+    align-items: center; /* Aligns vertically */
+  }
+
+.logo {
+    width: 300px;
+    height: 100px;
+}
+
+header img {
+    width: 100px;  /* Adjust logo size as needed */
+}
+
+header h1 {
+    margin-left: 10px; /* Adjust spacing between logo and title */
+}
+
+nav {
+    margin-left: auto; /* Position navigation to the right */
+}
+
+nav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+main {
+    padding: 20px;
+}
+.hero-image-text {
+    display: flex; /* Allow image and text to sit side-by-side */
+    justify-content: flex-end; /* Align content to the end (right) */
+    align-items: center; /* Vertically align image and text */
+}
+  
+.hero-img {
+    width: 50%; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+.hero-img1 {
+    width: 20%; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.hero-img3 {
+    width: 20%; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+.hero-img2 {
+    width: 20%; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+  
+  /* Optional: Style the paragraph beside the image  */
+.hero-image-text p {
+    margin-left: 10px; /* Add spacing between image and text */
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.hero-text {
+    margin-left: 20px; /* Adjust spacing as needed */
+  }
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+}
+
+.features-list h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+main {
+    padding: 20px;
+    background: linear-gradient(to right, #f0f0f0, #00b6ee);
+  }
+  .global-font {
+    font-family: Arial, sans-serif;
+  }
+  
+.body {
+    font-family: Poppins, sans-serif; /* Poppins is the preferred font */
+    font-family: Arial, sans-serif; /* Fallback font if Poppins is unavailable */
+  }
+
+/* Add more styles as needed (e.g., for buttons, charts) */
