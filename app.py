@@ -1,6 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired, Email
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your_secret_key'
+
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    message = TextAreaField('Message', validators=[DataRequired()])
+    submit = SubmitField('Send')
 
 @app.route('/')
 def index():
@@ -8,30 +18,28 @@ def index():
 
 @app.route('/features')
 def features():
-    # Define features and descriptions here
-    features = [
-        {'title': 'Comprehensive Dashboard', 'description': 'See trends and insights unfold as your data updates.'},
-        {'title': 'Ease of Use', 'description': 'The SaaS web platform allows businesses to simply upload their files for automated analysis, with all data securely stored in the cloud. We get insights just by uploading file in format of your choice. It can read a dataset in various formats such as xlsx, csv, jpg, png, pdf and etc.'},
-        {'title': 'Mobile compatibility', 'description': 'Users can capture physical invoices with their mobile camera and upload them to get insights in a click.'},
-        {'title': 'Handy AI assistant', 'description': 'We can chat with the AI assistant in our natural language and in our desired language, whether it be Hindi, Telugu, Tamil, Bengali, etc.'},
-        {'title': 'Precise Demand Predictions', 'description': 'Utilizes advanced algorithms for accurate forecasts.'},
-        {'title': 'Real-Time Insights', 'description': 'Provides immediate, actionable data for decision-makers.'},
-        {'title': 'User-Friendly Interface', 'description': 'Easy to navigate, no prior experience required.'},
-        {'title': 'Accurate Forecasting', 'description': 'With precise demand predictions, they optimized their stock levels.'},
-    ]
+    features = []
     return render_template('features.html', features=features)
 
 @app.route('/pricing')
 def pricing():
-  return render_template('pricing.html')
+    return render_template('pricing.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-  return render_template('contact.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        flash('Message sent successfully!', 'success')
+        return redirect(url_for('contact'))
+    return render_template('contact.html', form=form)
 
-@app.route('/team')
-def team():
-  return render_template('team.html')
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <title>Your Data Analytics Dashboard</title>
+    <title>{% block title %}Your Data Analytics Dashboard{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -14,12 +12,14 @@
         <nav>
             <a href="/">Home</a>
             <a href="/features">Features</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
     <main>
-        </main>
+        {% block content %}{% endblock %}
+    </main>
     <footer>
-        <p>&copy; 2024 Your Company Name</p>
     </footer>
 </body>
 </html>

@@ -1,36 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;  /* Remove default margin */
-    padding: 0;  /* Remove default padding */
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
 
 header {
-    background-color: #ffffff;  /* Light background for header */
+    background-color: #ffffff;
     padding: 20px;
-    display: flex;  /* Align logo and navigation horizontally */
-    align-items: center;  /* Align items vertically in header */
-}
-
-.flex {
     display: flex;
-    align-items: center; /* Aligns vertically */
-  }
+    align-items: center;
+}
 
 .logo {
-    width: 300px;
-    height: 100px;
-}
-
-header img {
-    width: 100px;  /* Adjust logo size as needed */
+    width: 250px;
+    height: auto;
 }
 
 header h1 {
-    margin-left: 10px; /* Adjust spacing between logo and title */
+    margin-left: 20px;
 }
 
 nav {
-    margin-left: auto; /* Position navigation to the right */
+    margin-left: auto;
 }
 
 nav a {
@@ -46,37 +38,30 @@ nav a:hover {
 main {
     padding: 20px;
 }
-.hero-image-text {
-    display: flex; /* Allow image and text to sit side-by-side */
-    justify-content: flex-end; /* Align content to the end (right) */
-    align-items: center; /* Vertically align image and text */
-}
-  
+
 .hero-img {
-    width: 50%; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
-.hero-img1 {
-    width: 20%; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
+
+.hero-img2 {
+    width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-img3 {
-    width: 20%; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-.hero-img2 {
-    width: 20%; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-  
-  /* Optional: Style the paragraph beside the image  */
-.hero-image-text p {
-    margin-left: 10px; /* Add spacing between image and text */
+    width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .hero {
-    text-align: center;
+    text-align: flex;
 }
 
 .hero p {
@@ -84,10 +69,6 @@ main {
     line-height: 1.5;
     margin: 20px 0;
 }
-
-.hero-text {
-    margin-left: 20px; /* Adjust spacing as needed */
-  }
 
 .features-list {
     list-style: none;
@@ -104,22 +85,31 @@ main {
     margin-bottom: 5px;
 }
 
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
-main {
-    padding: 20px;
-    background: linear-gradient(to right, #f0f0f0, #00b6ee);
-  }
-  .global-font {
-    font-family: Arial, sans-serif;
-  }
-  
-.body {
-    font-family: Poppins, sans-serif; /* Poppins is the preferred font */
-    font-family: Arial, sans-serif; /* Fallback font if Poppins is unavailable */
-  }
+.btn:hover {
+    background-color: #0056b3;
+}
 
-/* Add more styles as needed (e.g., for buttons, charts) */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

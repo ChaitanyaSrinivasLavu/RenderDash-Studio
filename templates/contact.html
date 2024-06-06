@@ -2,66 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sales Predict Dashboard - Contact</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-ZenhBwPWqAZlEglhhRORUEfIWRS9uVCvcqFNLW4zBBVX4aRWqD4zWrYfHqmGuPJz" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">  <style>
-    .contact-form {
-      margin-bottom: 30px;
-    }
-
-    .contact-form label {
-      font-weight: bold;
-    }
-
-    .contact-info {
-      text-align: center;
-    }
-
-    .contact-info i {
-      font-size: 24px;
-      margin-right: 10px;
-      color: #009ad6;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - Your Data Analytics Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
 </head>
 <body>
-  <h1>Contact Us</h1>
+  <header class="header">  </header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="contact-form">
-          <form action="/contact" method="post">
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message:</label>
-              <textarea class="form-control" id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
+  <main class="global-font">
+    <section class="team-section">
+      <div class="container">
+        <div class="team-members">
+          <div class="team-member">
+            <img src="{{ url_for('static', filename='images/nine.png') }}" alt="Your Photo" class="hero-img">
+          </div>
       </div>
-      <div class="col-md-6">
-        <h2>Alternative Contact Methods</h2>
-        <ul class="list-group contact-info">
-          <li class="list-group-item">
-            <i class="fas fa-envelope-square"></i> Email: <a href="mailto:ceo@renderdash.studio">ceo@renderdash.studio</a>, <a href="mailto:cto@renderdash.studio">cto@renderdash.studio</a>
-          </li>
-          <li class="list-group-item">
-            <i class="fas fa-phone"></i> Phone: +91 9398443671
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EQhONREsSLCPwZcaPtR4oGYTQYH7ACWRSqLZ8wdt3XNBlXT4vAewXqjqz38" crossorigin="anonymous"></script>
+  <footer class="footer">  </footer>
 </body>
 </html>
